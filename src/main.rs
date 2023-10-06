@@ -23,6 +23,9 @@ fn main() {
 
     let result = match pilih {
         Some('*') => kali(user_input1, user_input2),
+        Some('/') => bagi(user_input1, user_input2),
+        Some('+') => tambah(user_input1, user_input2),
+        Some('-') => kurang(user_input1, user_input2),
         _ => {
             println!("inputan salah");
             return;
@@ -34,5 +37,23 @@ fn main() {
 
 fn kali(a: i32, b: i32) -> i32 {
     let result = a * b;
+    return result;
+}
+
+fn bagi(a: i32, b: i32) -> i32 {
+    if b == 0 {
+        println!("pembagian salah");
+        std::process::exit(1);
+    }
+    a / b
+}
+
+fn tambah(a: i32, b: i32) -> i32 {
+    let result = a + b;
+    return result;
+}
+
+fn kurang(a: i32, b: i32) -> i32 {
+    let result = a / b;
     return result;
 }
